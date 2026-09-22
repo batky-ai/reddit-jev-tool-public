@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit Jev Tool",
+  "version": "0.2.0",
+  "description": "Highlights Reddit posts you can answer, scored against your own expertise cards.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://reddit.com/*",
+    "https://*.reddit.com/*",
+    "https://api.typesafe.ai/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://reddit.com/*", "https://www.reddit.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html",
+  "action": { "default_title": "Reddit Jev Tool" }
+}

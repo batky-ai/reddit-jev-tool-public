@@ -1,0 +1,30 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+token.json
+client_secret*.json
+service-account*.json
+
+# Dependencies and build output
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+build/
+.next/
+.vercel/
+
+# Working notes, not shared state
+.tmp/
+
+# OS
+.DS_Store
+
+# Test runner cache
+.vitest/

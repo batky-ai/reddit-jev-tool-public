@@ -1,0 +1,69 @@
+{
+  "answered": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "already_well_answered": {
+        "type": "noul",
+        "noul": 0.92
+      },
+      "op_still_needs_help": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 510,
+      "output_tokens": 46
+    }
+  },
+  "open": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "already_well_answered": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "op_still_needs_help": {
+        "type": "noul",
+        "noul": 0.96
+      }
+    },
+    "usage": {
+      "input_tokens": 480,
+      "output_tokens": 46
+    }
+  },
+  "withValue": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "gap_0": {
+        "type": "noul",
+        "noul": 0.64
+      },
+      "gap_1": {
+        "type": "noul",
+        "noul": 0.89
+      },
+      "gap_2": {
+        "type": "noul",
+        "noul": 0.53
+      },
+      "gap_3": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "already_well_answered": {
+        "type": "noul",
+        "noul": 0.13
+      },
+      "op_still_needs_help": {
+        "type": "noul",
+        "noul": 0.89
+      }
+    },
+    "usage": {
+      "input_tokens": 1101,
+      "output_tokens": 118
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+    "model": "jev-1.13.0",
+    "answers": {
+        "is_help_request": {
+            "type": "noul",
+            "noul": 0.97
+        },
+        "expertise_match": {
+            "type": "score",
+            "score": 3.88,
+            "confidence": 0.9,
+            "legend": {
+                "0": "No overlap with the cards",
+                "1": "Tangential overlap",
+                "2": "Partial overlap, could give general pointers",
+                "3": "Strong overlap, could answer most of it",
+                "4": "Exact match, could answer fully and specifically"
+            },
+            "probabilities": {
+                "0": 0.0,
+                "1": 0.0,
+                "2": 0.0,
+                "3": 0.12,
+                "4": 0.88
+            }
+        },
+        "best_card": {
+            "type": "choice",
+            "choice": "n8n",
+            "confidence": 0.54,
+            "probabilities": {
+                "n8n": 0.7,
+                "none": 0.0,
+                "shopify-webhooks": 0.3
+            }
+        }
+    },
+    "usage": {
+        "input_tokens": 645,
+        "output_tokens": 82
+    }
+}

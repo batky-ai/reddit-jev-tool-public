@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Reddit Jev Tool</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Reddit Jev Tool</h1>
+      <p id="save-status" class="muted"></p>
+
+      <section>
+        <h2>TypeSafe key</h2>
+        <p class="muted">Stored only in this browser. Only public post text and your cards are sent to TypeSafe.</p>
+        <input id="apiKey" type="password" autocomplete="off" placeholder="TypeSafe API key" />
+        <label><input id="enabled" type="checkbox" /> Highlighting on</label>
+        <p id="usage" class="muted"></p>
+      </section>
+
+      <section>
+        <h2>Where to look</h2>
+        <label><input type="radio" name="subredditMode" value="all" /> Every feed I scroll</label>
+        <label><input type="radio" name="subredditMode" value="only" /> Only these subreddits</label>
+        <textarea id="subreddits" rows="3" placeholder="n8n, ClaudeCode, shopify"></textarea>
+      </section>
+
+      <section>
+        <h2>Filters</h2>
+        <div class="grid">
+          <label>Match threshold (0 to 1) <input id="threshold" type="number" min="0" max="1" step="0.05" /></label>
+          <label>Ignore posts with more comments than <input id="maxComments" type="number" min="0" step="1" /></label>
+          <label>Daily Jev call cap <input id="dailyCallCap" type="number" min="0" step="10" /></label>
+          <label>Boost for unanswered posts in your area (0 turns it off) <input id="unansweredBoost" type="number" min="0" max="0.5" step="0.05" /></label>
+        </div>
+        <label><input id="scoreWithoutKeywords" type="checkbox" /> Score help requests even when none of my keywords appear (more calls)</label>
+        <label><input id="scanThreads" type="checkbox" /> On thread pages, mark comments where I could add value (up to 3 Jev calls per thread; a heavy reader uses the daily cap faster)</label>
+      </section>
+
+      <section>
+        <h2>Expertise cards</h2>
+        <p class="muted">
+          One card per <code>## Title</code>, a <code>keywords:</code> line, then a short summary of what you know.
+          Keywords decide which posts reach Jev; the summary is what Jev judges against. A JSON array also works.
+        </p>
+        <textarea id="cards" rows="16" spellcheck="false"></textarea>
+        <div class="row">
+          <button id="cards-save">Save cards</button>
+          <span id="cards-status" class="muted"></span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Learning</h2>
+        <p class="muted">
+          Built from your I answered / Skip / Not my area clicks. It moves the match threshold (by at most 0.15), nudges it per
+          subreddit, and re-weights card keywords. Everything stays in this browser.
+        </p>
+        <pre id="learning-summary"></pre>
+        <div class="row">
+          <button id="feedback-export">Export feedback JSON</button>
+          <button id="learning-reset">Reset learning</button>
+          <span id="learning-status" class="muted"></span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Diagnostics</h2>
+        <p id="diagnostics-status"></p>
+        <div class="row">
+          <button id="diagnostics-copy">Copy report</button>
+          <button id="diagnostics-reset">Clear and run again</button>
+        </div>
+        <textarea id="diagnostics-output" readonly spellcheck="false"></textarea>
+      </section>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>
